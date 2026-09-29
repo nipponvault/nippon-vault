@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nippon Vault | Japanese TCG Store</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0f;
+            color: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #11111a, #191923);
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 1px solid #292936;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            margin-top: 8px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 15px;
+            background: #101017;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            background: #1d1d27;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            background: #e63946;
+        }
+
+        .hero {
+            padding: 70px 20px;
+            text-align: center;
+            background:
+                radial-gradient(circle at top, #25253a, #0b0b0f 65%);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #bbb;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 25px;
+            background: #e63946;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 45px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .category {
+            padding: 30px 20px;
+            text-align: center;
+            background: #15151e;
+            border: 1px solid #292936;
+            border-radius: 18px;
+            transition: 0.2s;
+        }
+
+        .category:hover {
+            transform: translateY(-4px);
+            border-color: #e63946;
+        }
+
+        .category-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .category h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .category p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background: #15151e;
+            border: 1px solid #292936;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .product-image {
+            height: 210px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #20202b;
+            font-size: 65px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buy-button {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .preorder {
+            background: linear-gradient(135deg, #181824, #252538);
+            border: 1px solid #39394c;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+        }
+
+        .preorder h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .preorder p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .social {
+            display: inline-block;
+            padding: 13px 20px;
+            border-radius: 12px;
+            background: #1d1d27;
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #08080c;
+            color: #777;
+            font-size: 13px;
+            border-top: 1px solid #22222c;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .logo {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🇯🇵 NIPPON VAULT</div>
+    <div class="subtitle">Japanese TCG Store • Pokémon • One Piece • Yu-Gi-Oh!</div>
+</header>
+
+<nav>
+    <a href="#categorie">Categorie</a>
+    <a href="#prodotti">Prodotti</a>
+    <a href="#preordini">Preordini</a>
+    <a href="#contatti">Contatti</a>
+</nav>
+
+<div class="hero">
+    <h1>Japanese TCG, direttamente dal Giappone 🇯🇵</h1>
+
+    <p>
+        Box, carte singole, preordini e Mystery Box.
+        Scopri il mondo dei Trading Card Game giapponesi con Nippon Vault.
+    </p>
+
+    <a class="hero-button" href="#prodotti">
+        SCOPRI I PRODOTTI
+    </a>
+</div>
+
+<section id="categorie">
+
+    <h2 class="section-title">Cosa cerchi?</h2>
+
+    <div class="categories">
+
+        <div class="category">
+            <div class="category-icon">⚡</div>
+            <h3>Pokémon</h3>
+            <p>Box, booster pack e carte Pokémon giapponesi.</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">🏴‍☠️</div>
+            <h3>One Piece</h3>
+            <p>Box e prodotti One Piece Card Game Japanese.</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">🃏</div>
+            <h3>Yu-Gi-Oh!</h3>
+            <p>Carte e prodotti Yu-Gi-Oh! dal Giappone.</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">🎁</div>
+            <h3>Mystery Box</h3>
+            <p>Box sorpresa con carte e prodotti TCG.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="prodotti">
+
+    <h2 class="section-title">Prodotti in evidenza</h2>
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-image">
+                ⚡
+            </div>
+
+            <div class="product-info">
+
+                <h3>Pokémon Japanese Booster Box</h3>
+
+                <p>
+                    Prodotto originale giapponese.
+                </p>
+
+                <div class="price">
+                    € --,-
+                </div>
+
+                <a class="buy-button"
+                   href="https://wa.me/390000000000"
+                   target="_blank">
+                    ORDINA SU WHATSAPP
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                🏴‍☠️
+            </div>
+
+            <div class="product-info">
+
+                <h3>One Piece Japanese Box</h3>
+
+                <p>
+                    Prodotto originale giapponese.
+                </p>
+
+                <div class="price">
+                    € --,-
+                </div>
+
+                <a class="buy-button"
+                   href="https://wa.me/390000000000"
+                   target="_blank">
+                    ORDINA SU WHATSAPP
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                🎁
+            </div>
+
+            <div class="product-info">
+
+                <h3>Mystery Box</h3>
+
+                <p>
+                    Pokémon • One Piece • Dragon Ball
+                </p>
+
+                <div class="price">
+                    € --,-
+                </div>
+
+                <a class="buy-button"
+                   href="https://wa.me/390000000000"
+                   target="_blank">
+                    ORDINA SU WHATSAPP
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="preordini">
+
+    <div class="preorder">
+
+        <h2>🔥 PREORDINI</h2>
+
+        <p>
+            Vuoi assicurarti una box giapponese prima dell'uscita?
+            Contattaci per scoprire i prossimi prodotti disponibili
+            in preordine.
+        </p>
+
+        <a class="hero-button"
+           href="https://wa.me/390000000000"
+           target="_blank">
+            RICHIEDI INFORMAZIONI
+        </a>
+
+    </div>
+
+</section>
+
+<section id="contatti">
+
+    <h2 class="section-title">Nippon Vault</h2>
+
+    <div class="links">
+
+        <a class="social"
+           href="https://wa.me/390000000000"
+           target="_blank">
+            📲 WhatsApp
+        </a>
+
+        <a class="social"
+           href="#"
+           target="_blank">
+            🛒 Vinted
+        </a>
+
+        <a class="social"
+           href="#"
+           target="_blank">
+            📸 Instagram
+        </a>
+
+        <a class="social"
+           href="#"
+           target="_blank">
+            ⭐ Feedback
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+    © 2026 Nippon Vault • Japanese TCG Store
+
+</footer>
+
+</body>
+</html>
